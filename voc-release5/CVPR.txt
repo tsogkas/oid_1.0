@@ -1,0 +1,13 @@
+Aspect ratio:
+
+job = batch(@jar_train_aspect_ratio_clustering,0,{obj_type,6,true,'aspect ration clustering with k = 6'},'matlabpool',12,'CaptureDiary',false);
+
+LR:
+
+jobs = start_jobs(@jar_train, 40, 'unsup left-right with k=40', 4)
+
+wheel
+-----
+LR k=10
+change scale to 1 in jar_test.m
+for training and testing: conf = cv(conf, 'features.extra_octave', true);
